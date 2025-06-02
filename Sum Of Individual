@@ -1,0 +1,48 @@
+#include<iostream.h>
+#include<conio.h>
+class sod
+{
+int irem,isum,inum;
+public:
+sod (int x)
+{
+irem=isum=0;
+inum=x;
+}
+inline void display()
+{
+cout<<"Sum of Individual Digits"<<isum;
+}
+void sum();
+`sod()
+{
+cout<<"\n Object Deleted";
+}
+};
+void sod::sum()
+{
+lbl:
+while(inum>=1)
+{
+irem=inum%10;
+inum=inum/10;
+isum=isum+irem;
+}
+if(isum>9)
+{
+inum=isum;
+isum=0;
+goto lbl;
+}
+}
+void main()
+{
+clrscr();
+int num;
+cout<<"Enter the number:";
+cin>>num;
+sod obj(num);
+obj.sum();
+obj.display();
+getch();
+}
